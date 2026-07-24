@@ -20,6 +20,7 @@ def _bilder() -> list[dict]:
                     "filename": name,
                     "content": base64.b64encode(pfad.read_bytes()).decode(),
                     "content_id": name.replace(".gif", ""),
+                    "content_type": "image/gif",
                 }
             )
     return anhaenge
