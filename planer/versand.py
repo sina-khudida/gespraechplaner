@@ -12,14 +12,14 @@ def _bilder() -> list[dict]:
     """Elefanten und Falter als eingebettete Anhänge."""
     anhaenge = []
     ordner = Path(__file__).parent / "bilder"
-    for name in ("elefanten.png", "falter.png"):
+    for name in ("elefanten.gif", "falter.gif"):
         pfad = ordner / name
         if pfad.exists():
             anhaenge.append(
                 {
                     "filename": name,
                     "content": base64.b64encode(pfad.read_bytes()).decode(),
-                    "content_id": name.replace(".png", ""),
+                    "content_id": name.replace(".gif", ""),
                 }
             )
     return anhaenge

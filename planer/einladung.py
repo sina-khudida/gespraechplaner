@@ -140,9 +140,10 @@ def mailhtml(themen: list[Topic], zeiten: list[Slot], antwort_an: str = "") -> s
 <table width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;
        font-family:Helvetica,Arial,sans-serif;color:#3A3348">
 
-  <tr><td style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8C85A0">
+<tr><td style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#8C85A0">
     Für uns beide
-    <tr><td style="padding-top:6px">
+  </td></tr>
+  <tr><td style="padding-top:6px">
     <img src="cid:falter" width="180" alt="" style="display:block;border:0">
   </td></tr>
   </td></tr>
@@ -174,8 +175,7 @@ def mailhtml(themen: list[Topic], zeiten: list[Slot], antwort_an: str = "") -> s
     Ich freu mich auf dich Dipse me :)
   </td></tr>
 <tr><td style="padding-top:30px">
-    <img src="cid:elefanten" width="340" alt="" style="display:block;border:0;max-width:100%">
-  </td></tr>
+   <img src="cid:elefanten" width="520" alt="" style="display:block;border:0;max-width:100%;margin:20px auto 0">  </td></tr>
 </table>
 </td></tr></table>
 </body></html>"""
