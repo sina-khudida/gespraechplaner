@@ -144,8 +144,7 @@ def mailhtml(themen: list[Topic], zeiten: list[Slot], antwort_an: str = "") -> s
     Für uns beide
   </td></tr>
   <tr><td style="padding-top:6px">
-    <img src="cid:falter" width="180" alt="" style="display:block;border:0">
-  </td></tr>
+    <img src="cid:falter" width="260" alt="" style="display:block;border:0;margin:0 auto">  </td></tr>
   <tr><td style="font-family:Georgia,serif;font-size:38px;line-height:1.1;font-weight:normal;
                  padding-top:10px">
     Was wir noch<br><i style="color:#7E6BA8">besprechen wollten</i>
