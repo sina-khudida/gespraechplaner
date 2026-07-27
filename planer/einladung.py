@@ -61,6 +61,8 @@ def mailhtml(themen: list[Topic], zeiten: list[Slot], antwort_an: str = "") -> s
     """Die Einladung im Look der Seite."""
     if not themen:
         return "<p>Aktuell steht nichts an.</p>"
+    BILD_FALTER = "https://raw.githubusercontent.com/sina-khudida/gespraechplaner/main/planer/bilder/falter.gif"
+    BILD_ELEFANTEN = "https://raw.githubusercontent.com/sina-khudida/gespraechplaner/main/planer/bilder/elefanten.gif"
 
     karten = ""
     for t in themen:
