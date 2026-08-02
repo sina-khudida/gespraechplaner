@@ -19,7 +19,6 @@ def sende_mail(
     nachricht = EmailMessage()
     nachricht["From"] = absender
     nachricht["To"] = empfaenger
-    nachricht["Bcc"] = absender  # Kopie an dich selbst
     nachricht["Subject"] = betreff
     nachricht.set_content(text)
     if html:
