@@ -2,7 +2,7 @@
 import os
 from datetime import date, timedelta
 
-STANDARD_ABSTAND = 23  # Tage vor Silvester
+STANDARD_ABSTAND = 8  # Tage vor Silvester
 
 
 def _abstand() -> int:
@@ -13,7 +13,7 @@ def _abstand() -> int:
 def grosser_tag(heute: date | None = None) -> date:
     """Der nächste große Tag.
 
-    Entweder fest über PLANER_GROSSER_TAG (z. B. 2026-12-08) gesetzt,
+    Entweder fest über PLANER_GROSSER_TAG (z. B. 2026-12-23) gesetzt,
     sonst N Tage vor Silvester. Ist der Tag dieses Jahr vorbei,
     zählt automatisch das nächste Jahr.
     """
