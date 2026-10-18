@@ -11,7 +11,7 @@ Beide Dateien nach `planer/` legen:
 export GMAIL_ADRESSE="deine@gmail.com"
 export GMAIL_APP_PASSWORT="xxxx xxxx xxxx xxxx"
 export PLANER_ERINNERUNG_AN="du@example.com,er@example.com"
-export PLANER_DB="$HOME/.local/share/gespraechplaner/planer.db"
+export PLANER_DB="./planer.db"   # liegt im Projektordner, ist per .gitignore ausgenommen
 
 # Optional – Standard sind 23 Tage vor Silvester (8. Dezember)
 export PLANER_TAGE_VOR_JAHRESENDE=23
@@ -42,6 +42,23 @@ oder – sauberer – in eine Datei schreiben und im Befehl laden:
 
 ```
 0 8 * * * cd /pfad/zum/projekt && set -a && . ./.env && set +a && /pfad/zum/venv/bin/python -m planer.erinnerung
+```
+
+### macOS: launchd (so läuft es hier tatsächlich)
+
+`~/Library/LaunchAgents/de.gespraechplaner.erinnerung.plist` startet
+`python -m planer.erinnerung` jeden Tag um 8:00. Die Umgebungsvariablen
+(Passwort, Empfänger, `PLANER_DB`, `PLANER_GROSSER_TAG`) stehen direkt im
+plist, nicht in der `.env` – bei einem Passwortwechsel also beides anpassen.
+`PLANER_DB` sollte auf dieselbe `planer.db` zeigen wie die Weboberfläche,
+sonst stehen in den Mails alte Themen.
+
+```bash
+plutil -lint ~/Library/LaunchAgents/de.gespraechplaner.erinnerung.plist
+launchctl bootout gui/$(id -u)/de.gespraechplaner.erinnerung   # nach Änderungen
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/de.gespraechplaner.erinnerung.plist
+launchctl kickstart gui/$(id -u)/de.gespraechplaner.erinnerung  # sofort einmal laufen lassen
+tail ~/.local/share/gespraechplaner/erinnerung.log
 ```
 
 ### systemd-Timer (holt verpasste Läufe nach)
