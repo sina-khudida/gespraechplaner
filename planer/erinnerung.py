@@ -91,8 +91,18 @@ def mailtext(offen: int, themen: list) -> str:
     return "\n".join(zeilen)
 
 
+BILD_FALTER = (
+    "https://raw.githubusercontent.com/sina-khudida/gespraechplaner/main/"
+    "planer/bilder/falter.gif"
+)
+BILD_ELEFANTEN = (
+    "https://raw.githubusercontent.com/sina-khudida/gespraechplaner/main/"
+    "planer/bilder/elefanten.gif"
+)
+
+
 def mailhtml(offen: int, themen: list) -> str:
-    """HTML in derselben Handschrift wie die Weboberfläche."""
+    """HTML in derselben Handschrift wie die Weboberfläche – mit Falter und Elefanten."""
     stern = '<span style="color:#D9A0B8"> ✦</span>'
     if themen:
         punkte = "".join(
@@ -125,6 +135,8 @@ def mailhtml(offen: int, themen: list) -> str:
     <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8C85A0">
       Für uns beide
     </div>
+    <img src="{BILD_FALTER}" width="220" alt=""
+         style="display:block;border:0;margin:10px auto 0;max-width:100%">
     <div style="font-family:Georgia,'Times New Roman',serif;font-weight:300;
                 font-size:64px;line-height:1;color:#7E6BA8;margin:14px 0 0">
       {zahl}<span style="font-family:Karla,Arial,sans-serif;font-size:13px;color:#8C85A0;
@@ -139,6 +151,8 @@ def mailhtml(offen: int, themen: list) -> str:
                 text-transform:uppercase;color:#8C85A0">Was noch wartet</div>
     {liste}
   </div>
+  <img src="{BILD_ELEFANTEN}" width="520" alt=""
+       style="display:block;border:0;max-width:100%;margin:20px auto 0">
 </div>"""
 
 
