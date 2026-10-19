@@ -13,10 +13,10 @@ export GMAIL_APP_PASSWORT="xxxx xxxx xxxx xxxx"
 export PLANER_ERINNERUNG_AN="du@example.com,er@example.com"
 export PLANER_DB="./planer.db"   # liegt im Projektordner, ist per .gitignore ausgenommen
 
-# Optional – Standard sind 23 Tage vor Silvester (8. Dezember)
-export PLANER_TAGE_VOR_JAHRESENDE=23
+# Optional – Standard sind 8 Tage vor Silvester (23. Dezember)
+export PLANER_TAGE_VOR_JAHRESENDE=8
 # Oder ein festes Datum, dann zählt nur dieses:
-# export PLANER_GROSSER_TAG=2026-12-08
+# export PLANER_GROSSER_TAG=2026-12-23
 ```
 
 ## 2. Erst trocken testen
